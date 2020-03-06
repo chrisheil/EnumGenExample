@@ -1,0 +1,47 @@
+# This was converted to yaml by editor.swagger.io
+
+x-generator: NSwag v13.2.4.0 (NJsonSchema v10.1.7.0 (Newtonsoft.Json v9.0.0.0))
+openapi: 3.0.0
+info:
+  title: My Title
+  version: 1.0.0
+servers:
+  - url: 'https://localhost:44359'
+paths:
+  /Demo:
+    get:
+      tags:
+        - Demo
+      operationId: Demo_Get
+      parameters:
+        - name: DemoSelection
+          in: query
+          schema:
+            $ref: '#/components/schemas/DemoEnum'
+          x-position: 1
+        - name: DemoSelectionNullable
+          in: query
+          schema:
+            nullable: true
+            oneOf:
+              - $ref: '#/components/schemas/DemoEnum'
+          x-position: 2
+      responses:
+        '200':
+          description: ''
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+components:
+  schemas:
+    DemoEnum:
+      type: integer
+      description: ''
+      x-enumNames:
+        - value1
+        - value2
+      enum:
+        - 0
+        - 1
